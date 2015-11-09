@@ -16,5 +16,7 @@ for k = 10 : 10 : 200
    % waitforbuttonpress;
 end
 
-semilogy(rel_error)
+semilogy(rel_error);
+hold on;
+oef8;
 
