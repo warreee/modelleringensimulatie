@@ -1,6 +1,6 @@
 
 load('AmazonBookReviews.mat');
 
-tic;
-r0381767_plotAllApproximationErrors(Ratings);
-toc;
+
+Errors = r0381767_plotAllApproximationErrors(Ratings);
+
