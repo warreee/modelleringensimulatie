@@ -7,14 +7,14 @@ function [ books ] = r0381767_similarBooks( bookNumber, nb, Model, labels )
 temp = 1:n;
 
 for i = 1 : n
-    temp(i) = principalAngle(Model(i,:), Model(bookNumber,:));
+    temp(i) = principalAngle(Model(:,i), Model(:,bookNumber));
     
 end
 
-map = containers.Map(temp,labels);
+[B, I] = sort(temp);
 
-book = values(map);
-books = book(1:nb);
+books = labels(I);
 
 end
+
 
