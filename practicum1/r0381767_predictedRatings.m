@@ -1,6 +1,5 @@
 function [ Predicted, err ] = r0381767_predictedRatings( Ratings, r, kappa )
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
+%Low rank approximation for a uncomplete matrix Ratings
 
 [m,n] = size(Ratings);
 
@@ -13,16 +12,11 @@ Ak = [];
 err = [];   
 
 for i = 1:kappa
-    %[U,S,V] = svds(Ri,i);
-    %Ak = U * S * transpose(V);
     [U,S,V] = svd(Ri);
     Ak = U(:,1:r) * S(1:r,1:r) * transpose(V(:,1:r));
-    
     err = [err,r0381767_approximationError(Ratings, Ak)];
-
     Ri = D.*Ratings + (one - D).*Ak;
 end
-
 
 Predicted = max(1,min(5,Ak));
 r0381767_approximationError(Ratings, Predicted);
