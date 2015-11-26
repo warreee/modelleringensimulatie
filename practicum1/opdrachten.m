@@ -24,4 +24,8 @@ colorbar;
 axis('square'); 
 print -depsc opdracht6 %used for output
 
-%%
+%% Opdracht 8
+
+book1 = r0381767_similarBooks(1,6,Predicted26,labels)
+book21 = r0381767_similarBooks(21,3,Predicted26,labels)
+book101 = r0381767_similarBooks(101,10,Predicted26,labels)
