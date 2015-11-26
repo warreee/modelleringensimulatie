@@ -2,10 +2,9 @@ function [ Predicted, err ] = r0381767_predictedRatings( Ratings, r, kappa )
 %Low rank approximation for a uncomplete matrix Ratings
 
 [m,n] = size(Ratings);
-
 one = ones(m,n);
-
-D = binaryMartix(Ratings);
+D = zeros(m,n);
+D(Ratings > 0) = 1;
 
 Ri = D.*Ratings + 1.5*(one - D);
 Ak = [];

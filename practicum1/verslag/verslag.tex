@@ -13,6 +13,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \graphicspath{{figures/}}
+\usepackage{todonotes}
 
 %----------------------------------------------------------------------------------------
 %	CONFIGURATION OF CODE LISTINGS
@@ -123,12 +124,10 @@ Dr. Ir. Nick \textsc{Vannieuwenhoven} \\ % Supervisor's Name
 \lstinputlisting[language=Matlab, caption=Opdracht 2]{../r0381767_approximationError.m}
 
 \section*{Opdracht 3}
-
+\todo{rank nog wegdoen}
 \lstinputlisting[language=Matlab, caption=Opdracht 3]{../r0381767_predictedRatings.m}
 
 \section*{Opdracht 4}
-
-\lstinputlisting[language=Matlab, caption=Opdracht 4, firstline=6, lastline=13]{../opdrachten.m}
 
 \begin{figure}[H]
 \centering
@@ -136,7 +135,18 @@ Dr. Ir. Nick \textsc{Vannieuwenhoven} \\ % Supervisor's Name
 \caption{Opdracht 4}
 \end{figure}
 
+\lstinputlisting[language=Matlab, caption=Opdracht 4, firstline=6, lastline=13]{../opdrachten.m}
+
+
+
 \section*{Opdracht 5}
+De kleinste rang waarvoor de benaderingsfout kleiner is als $10^{-13}$ is 26.
+Dit valt af te lezen van de figuur alsook in de vector \texttt{Error} in onderstaande code waarbij het 26ste element 0.000000000000003 is, terwijl het 25ste nog 0.000000000005736 is en dus groter als $10^{-13}$.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.55]{opdracht5}
+\caption{All approximation errors}
+\end{figure}
 
 \lstinputlisting[language=Matlab, caption=Opdracht 5]{../r0381767_plotAllApproximationErrors.m}
 

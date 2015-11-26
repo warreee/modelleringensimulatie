@@ -7,11 +7,17 @@ n = size(labels, 2);
 temp = 1:n;
 
 for i = 1 : n
-    temp(i) = principalAngle(Model(:,i), Model(:,bookNumber));
+    g = Model(:,i);
+    h = Model(:,bookNumber);
+    numerator = abs(g'*h);
+    denominator = norm(g)*norm(h);
+    temp(i) = acos(numerator/denominator);
 end
 
-[B, I] = sort(temp);
+[~, I] = sort(temp);    %sort and create permutation vector
+I = I(1:nb);            %select the first nb best
 books = labels(I);
+
 
 end
 
