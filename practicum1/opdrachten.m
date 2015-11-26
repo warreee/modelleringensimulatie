@@ -23,3 +23,5 @@ imagesc(Predicted26);
 colorbar; 
 axis('square'); 
 print -depsc opdracht6 %used for output
+
+%%

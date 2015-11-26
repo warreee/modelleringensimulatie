@@ -6,7 +6,7 @@ Errors = zeros(1,40);
 kappa = 5000;
 
 for r = 1:max
-    Errors(1,r) = predictedError(Ratings, r, kappa);
+    Errors(r) = r0381767_predictedError(Ratings, r, kappa);
 end
 
 figure
