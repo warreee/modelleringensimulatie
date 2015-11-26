@@ -1,13 +1,15 @@
 function [ err ] = r0381767_approximationError( Ratings, Predicted )
-% Summary of this function goes here
-%   Detailed explanation goes here
+% Calculates relative error between Ratings and Predicted
+%   err: measure of relative error between Ratings and Predicted
+%   Ratings and Predicted must have the same dimensions
+%   Unknown vqlues in Ratings are 0
 
 D = binaryMartix(Ratings);
 
-teller = sum(sum((Ratings-(D.*Predicted)).^2));
+numerator = sum(sum((Ratings-(D.*Predicted)).^2));
 
-noemer = sum(sum((Ratings).^2));
+denominator = sum(sum((Ratings).^2));
 
-err = sqrt(teller/noemer);
+err = sqrt(numerator/denominator);
 end
 
