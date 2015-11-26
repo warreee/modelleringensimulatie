@@ -17,7 +17,7 @@ for i = 1:kappa
     err = [err,r0381767_approximationError(Ratings, Ak)];
     Ri = D.*Ratings + (one - D).*Ak;
 end
-
+rank(Ak)
 Predicted = max(1,min(5,Ak));
 r0381767_approximationError(Ratings, Predicted);
 
