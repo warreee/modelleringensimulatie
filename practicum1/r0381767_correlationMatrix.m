@@ -1,7 +1,6 @@
 function [ C ] = r0381767_correlationMatrix( Predicted )
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+%Calculates the correlation matrix C
+   %Uses the build-in function
     C = corrcoef(Predicted);
-
 end
 
