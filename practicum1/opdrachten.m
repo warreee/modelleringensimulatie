@@ -18,7 +18,7 @@ print -depsc opdracht4 %used for output
 
 %% Opdracht 6
 
-Predicted26 = r0381767_predictedRatings(Ratings, 40, 5000);   
+Predicted26 = r0381767_predictedRatings(Ratings, 26, 5000);   
 imagesc(Predicted26); 
 colorbar; 
 axis('square'); 
@@ -29,3 +29,8 @@ print -depsc opdracht6 %used for output
 book1 = r0381767_similarBooks(1,6,Predicted26,labels)
 book21 = r0381767_similarBooks(21,3,Predicted26,labels)
 book101 = r0381767_similarBooks(101,10,Predicted26,labels)
+
+%% Opdracht 9
+
+semilogy(svd(Predicted26), 'x');
+print -depsc opdracht9a %used for output
