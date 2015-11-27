@@ -14,6 +14,7 @@
 \usepackage{float}
 \graphicspath{{figures/}}
 \usepackage{todonotes}
+\usepackage{url}
 
 %----------------------------------------------------------------------------------------
 %	CONFIGURATION OF CODE LISTINGS
@@ -137,16 +138,32 @@ Dr. Ir. Nick \textsc{Vannieuwenhoven} \\ % Supervisor's Name
 
 Een rechte op een loglog plot heeft een vergelijking van volgende vorm:
 
-$$\log_{10}(y) = m\log_{10}x + b $$
-De rico \textit{m} hier geeft aan hoe snel de daling van de fout is.
+\begin{equation}
+\log_{10}(y) = m\log_{10}x + b 
+\end{equation}
+\textit{y} is de benaderningsfout.\\
+\textit{x} is de iteratie waarin dat fout \textit{y} is.\\
+\textit{b} is het snijpunt van de rechte met de y-as \\
+\textit{m} is de richtingscoëfficient en hier ook convergentiefactor. Aangezien het een dalende rechte is moet m negatief zijn.\\
+We bepalen nu de convergentie-orde met behulp van volgende formule:
+$$\lim_{k\rightarrow\infty} \frac{|e_{k+1} - L|}{|e_k - L|} = \mu$$
+Hier is \textit{L} het getal waarnaar geconvergeerd wordt, in dit geval dus 0, we krijgen:
+\begin{equation}
+\lim_{k\rightarrow\infty} \frac{|e_{k+1}|}{|e_k|} = \mu
+\end{equation}
+$e_k$ en $e_{k+1}$ stellen dus respectievelijk de k-de en k+1-ste fout voor. Deze fouten kunnen we halen uit vergelijking (1):
+$$\text{fout k} = y = x^m + 10^b$$
 
+Indien we dit invullen in vergelijking (2) krijgen we:
+
+$$\lim_{k\rightarrow\infty} \frac{|(k+1)^m + 10^b|}{|k^m + 10^b|} = 1$$
+
+
+Aangezien $\mu=1$ wordt voor $k\rightarrow \infty$ kunnen we spreken over \textbf{sublineare convergentie orde}\footnote{\url{https://en.wikipedia.org/wiki/Rate_of_convergence}}. 
 
 \lstinputlisting[language=Matlab, caption=Opdracht 4, firstline=6, lastline=13]{../opdrachten.m}
 
-
-
 \section*{Opdracht 5}
-\todo{Menno zegt dat ik de getallen moet aanpassen}
 De kleinste rang waarvoor de benaderingsfout kleiner is als $10^{-13}$ is 26.
 Dit valt af te lezen van de figuur alsook in de vector \texttt{Error} in onderstaande code waarbij het 26ste element 0.000000000000003 is, terwijl het 25ste nog 0.000000000005736 is en dus groter als $10^{-13}$.
 \begin{figure}[H]
@@ -336,9 +353,37 @@ Dit gaat waarschijnlijk de oorzaak zijn dat er een cluster is gevormd.
 \includegraphics[scale=0.55]{opdracht16}
 \caption{Opdracht 16}
 \end{figure}
-
+De bijzondere structuur van figuur 9 is te verklaren doordat de correlatiematrix een symmetrisch matrix is. Daarna gaat het commando \texttt{symamd} er nog voor zorgen dat er
 \lstinputlisting[language=Matlab, caption=Opdracht 15, firstline=71, lastline=79]{../opdrachten.m}
 
+\section*{Opdracht 17}
 
+We moeten dus bewijzen dat:
+$$ rang(C) = rang\left(\frac{1}{m-1}((A-1\mu^T)\Sigma^{-1})^T((A-1\mu^T)\Sigma^{-1})\right) \leq r + 1$$
+De rang wordt niet beïnvloed door te vermenigvuldigen met een scalar:
+$$ rang(C) = rang\left(((A-1\mu^T)\Sigma^{-1})^T((A-1\mu^T)\Sigma^{-1})\right) \leq r + 1$$
+We gebruiken nu volgende eigenschap van matrices:
+\begin{equation}
+rang(A^TA) = rang(AA^T) = rang(A) = rang(A^T)
+\end{equation}
+Dan bekomen we:
+$$ rang(C) = rang\left((A-1\mu^T)\Sigma^{-1}\right) \leq r + 1$$
+$\Sigma$ is een diagonaalmatrix van rang n, dan kunnen we volgende eigenschap gebruiken:
+\\
+\\
+Indien A een $m\times n$ matrix is en B een $n\times k$ matrix van rang n dan geldt:
+\begin{equation}
+rang(AB) = rang(A)
+\end{equation}
+Nu bekomen we:
 
+$$ rang(C) = rang\left(A-1\mu^T\right) \leq r + 1$$
+\\
+We kunnen nu de eigenschap van subaddiviteit toepassen:
+\begin{equation}
+rang(A+B) \leq rang(A) + rang(B)
+\end{equation} 
+Dan bekomen we uiteindelijk:
+$$  rang(C) = rang\left(A+(-1\mu^T)\right) = rang(A) + rang(-1\mu^T) \leq r + 1$$
+De vorige eigenschap in (4) kunnen we nu ook gebruiken om de rang van $1\mu^T$ te berekenen. Aangezien $1$ en $\mu$ 1-dimensionaal zijn is hun rang ook maximaal 1. De rang van was al gekend namelijk \textit{r}. Hiermee is het gevraagde aangetoond.
 \end{document}
