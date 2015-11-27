@@ -1,4 +1,5 @@
 function [ Hinf ] = r0381767_buildCliques( C, tau )
+% Finds the cliques in a adjacency matrix
 
 C(C<tau)=0;
 C(C>=tau)=1;

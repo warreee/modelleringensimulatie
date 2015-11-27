@@ -1,6 +1,6 @@
 function [ Cluster ] = r0381767_cluster( Hinf, labels )
-%UNTITLED5 Summary of this function goes here
-%   Detailed explanation goes here
+% Returns a cell array of clusters of books
+
 p = symamd(Hinf);
 blocks = Hinf(p,p);
 n = size(blocks,1);
