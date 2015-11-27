@@ -67,3 +67,13 @@ for i=1 : n
        clusters3 = [clusters3, {clusters{i}}];
     end
 end
+
+%% Opdracht 16
+
+Hinf26b = r0381767_buildCliques(C26, 0.5);
+
+p = symamd(Hinf26b); 
+imagesc(C26(p,p)); 
+colorbar; 
+colormap jet
+print -depsc opdracht16 %used for output
