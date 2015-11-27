@@ -386,4 +386,28 @@ rang(A+B) \leq rang(A) + rang(B)
 Dan bekomen we uiteindelijk:
 $$  rang(C) = rang\left(A+(-1\mu^T)\right) = rang(A) + rang(-1\mu^T) \leq r + 1$$
 De vorige eigenschap in (4) kunnen we nu ook gebruiken om de rang van $1\mu^T$ te berekenen. Aangezien $1$ en $\mu$ 1-dimensionaal zijn is hun rang ook maximaal 1. De rang van was al gekend namelijk \textit{r}. Hiermee is het gevraagde aangetoond.
+
+\section*{Opdracht 18}
+
+We moeten aantonen dat het matrixproduct $K = H^2 = H\cdot H$ enkel van nul verschilt indien er een pad bestaat van hoogstens lengte 2.
+\\
+\\
+In de incidentiematrix H staat er enkel een getal verschillend van 1 als er een rechtstreeks pad is tussen twee knopen (hier boeken).
+\\
+\\
+We bewijzen nu in twee richtingen:\\
+\underline{$K = H^2 = H\cdot H$ verschilt van nul $\Rightarrow$ er bestaat een pad van hoogstens lengte 2:}
+\\
+\\
+f
+\\
+\\
+\underline{Er bestaat een pad van hoogstens lengte 2 $\Rightarrow$ $K = H^2 = H\cdot H$ verschilt van nul:}
+\\
+\\
+Het matrixproduct is gedefineerd als:
+$$(AB)_{ij} = \sum_{k=1}^mA_{ik}B_{kj}$$
+In de matrix K kan dus enkel een nul verschijnen indien de elementen in een rij i van H paarsgewijs vermenigvuldigd met de elementen uit een kolom j van H allemaal 0 zijn. We veronderstelden net het omgekeerde namelijk $(AB)_{ij} \neq 0$. Dit betekent dat er in H een rij en kolom waarbij geld dat er paden van lengte 2 zijn.
+
+\section{•}
 \end{document}
