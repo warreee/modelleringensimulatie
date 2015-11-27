@@ -34,3 +34,10 @@ book101 = r0381767_similarBooks(101,10,Predicted26,labels)
 
 semilogy(svd(Predicted26), 'x');
 print -depsc opdracht9a %used for output
+
+%% vraag 11
+
+C26 = r0381767_correlationMatrix(Predicted26);
+imagesc(C26); 
+colorbar;
+print -depsc opdracht11 %used for output
