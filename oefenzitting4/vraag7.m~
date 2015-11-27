@@ -1,6 +1,0 @@
-
-
-x = rand;
-y = rand;
-
-T = y * 2*pi;
