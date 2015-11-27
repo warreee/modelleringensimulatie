@@ -201,9 +201,19 @@ De resultaten zijn zeer realistisch aangezien er telkens de andere boeken terugg
 
 
 \section*{Opdracht 9}
+Figuur 4 toont inderdaad aan dat de singuliere waarden met volgnummer strikt groter dan 26 niet van de grootte-orde $10^{-13}$ zijn:
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.55]{opdracht9a}
-\caption{Predicted26}
+\caption{Singuliere waarden na afronding}
+\end{figure}
+
+Dit is te verklaren door de laatste stap het iteratief algoritme dat geïmplementeerd is in \\opdracht 3:
+$$A \leftarrow max\{1,min\{5,A_{\kappa}\}\}$$
+Deze stap zorgt er voor dat alle waarden binnen de schaal van 1 tot 5 liggen.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.55]{opdracht9b}
+\caption{Singuliere waarden zonder afronding}
 \end{figure}
 \end{document}
