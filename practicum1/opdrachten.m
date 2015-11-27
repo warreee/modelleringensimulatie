@@ -54,3 +54,16 @@ figure;
 imagesc(C26(p,p)); 
 colorbar
 print -depsc opdracht13b %used for output
+
+%% Opdracht 15
+
+clusters = r0381767_cluster(Hinf26, labels);
+
+clusters3 = [];
+n = size(clusters, 2);
+% Filter for clusters with at least length 3:
+for i=1 : n
+    if size(clusters{i},2) > 2
+       clusters3 = [clusters3, {clusters{i}}];
+    end
+end
