@@ -219,6 +219,8 @@ Deze stap zorgt er voor dat alle waarden binnen de schaal van 1 tot 5 liggen. Wa
 Inderdaad, in figuur 5 hebben de singuliere waarden met volgnummers strikt groter dan 26 nu wel een grootte-orde van $10^{-13}$.\\
 \\
 Dit fenomeen kan ook nog iets formeler verklaard worden. Singuliere waarden zijn de vierkantswortels van niet negatieve eigenwaarden. We weten ook dat het aantal niet nul eigenwaarden (van een matrix) kleiner dan of gelijk is, als de rang van die matrix.
-
-Door de afronding die gebeurd in de laatste stap van het algoritme veranderd de rang van de berekende matrix.
+Als er dus een benadering wordt gemaakt van rang \textit{r} door het algoritme in opdracht 3, dan zouden er dus telkens maar maximaal \textit{r} singuliere waarden mogen bestaan. De singuliere waarden die van grootte-orde $10^{-13}$ zijn, mogen we dus verwaarlozen.
+\\
+\\
+Door de afronding die gebeurd in de laatste stap van het algoritme veranderd de rang van de berekende matrix. Als we de rang berekenen voor de afronding (in lijn 22 bij listing 3) dan zien we dat die overeen komt met de parameter \textit{r=26}. De rang na afronding komt overeen met 110. Hierdoor is er geen enkele singuliere waarde die in buurt komt van grootte-orde $10^{-13}$.
 \end{document}
