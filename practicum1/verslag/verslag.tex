@@ -125,7 +125,7 @@ Dr. Ir. Nick \textsc{Vannieuwenhoven} \\ % Supervisor's Name
 \lstinputlisting[language=Matlab, caption=Opdracht 2]{../r0381767_approximationError.m}
 
 \section*{Opdracht 3}
-\todo{rank nog wegdoen}
+
 \lstinputlisting[language=Matlab, caption=Opdracht 3]{../r0381767_predictedRatings.m}
 
 \section*{Opdracht 4}
@@ -353,7 +353,21 @@ Dit gaat waarschijnlijk de oorzaak zijn dat er een cluster is gevormd.
 \includegraphics[scale=0.55]{opdracht16}
 \caption{Opdracht 16}
 \end{figure}
-De bijzondere structuur van figuur 9 is te verklaren doordat de correlatiematrix een symmetrisch matrix is. Daarna gaat het commando \texttt{symamd} er nog voor zorgen dat er
+De bijzondere structuur van figuur 9 is o.a. te verklaren doordat de correlatiematrix een symmetrisch matrix is. Indien boek a niet hoort bij boek b dan geldt dit andersom ook niet. Er zijn twee clusters waarbij de boeken sterk positief met elkaar verbonden zijn en twee clusters waarbij dat de boeken sterk negatief met elkaar verbonden zijn. Deze twee clusters die negatief verbonden zijn, zijn eigenlijk dezelfde clusters, door de symmetrie van de matrix. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.30]{fueled44}
+\caption{Boek 83: dune}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.30]{dune83}
+\caption{Boek 44: Fueled}
+\end{figure}
+De score tussen boek 44 en 83 of omgekeerd is -0.423. Dat deze twee boeken niet bij elkaar horen is gemakkelijk te verklaren door hun genres. Dune is science-fiction en fueled romantiek, twee genres die toch wel ver uiteen kunnen liggen.
+
 \lstinputlisting[language=Matlab, caption=Opdracht 15, firstline=71, lastline=79]{../opdrachten.m}
 
 \section*{Opdracht 17}
@@ -399,15 +413,32 @@ We bewijzen nu in twee richtingen:\\
 \underline{$K = H^2 = H\cdot H$ verschilt van nul $\Rightarrow$ er bestaat een pad van hoogstens lengte 2:}
 \\
 \\
-f
+Het matrixproduct is gedefineerd als:
+$$(AB)_{ij} = \sum_{k=1}^mA_{ik}B_{kj}$$
+In de matrix K kan dus enkel een nul verschijnen indien de elementen in een rij i van H paarsgewijs vermenigvuldigd met de elementen uit een kolom j van H allemaal 0 zijn. We veronderstelden net het omgekeerde namelijk $(AB)_{ij} \neq 0$. Dit beteken dat er een rij en kolom in H zijn die paden voorstellen van lengte 1. Dat er in K nu een niet nul verschijnt betekent dat er een pad is van lengte 2.
 \\
 \\
 \underline{Er bestaat een pad van hoogstens lengte 2 $\Rightarrow$ $K = H^2 = H\cdot H$ verschilt van nul:}
 \\
 \\
-Het matrixproduct is gedefineerd als:
-$$(AB)_{ij} = \sum_{k=1}^mA_{ik}B_{kj}$$
-In de matrix K kan dus enkel een nul verschijnen indien de elementen in een rij i van H paarsgewijs vermenigvuldigd met de elementen uit een kolom j van H allemaal 0 zijn. We veronderstelden net het omgekeerde namelijk $(AB)_{ij} \neq 0$. Dit betekent dat er in H een rij en kolom waarbij geld dat er paden van lengte 2 zijn.
+Als er een pad bestaat van lengte 2 dan moeten er 2 paden bestaan van lengte 1. Dit toont het bestaan aan incidentiematrix H. Om een pad van lengte twee te bekomen vermenigvuldigt men H met zichzelf. Daar er een pad is moet dit getal verschillen van nul.
 
-\section{•}
+\section*{Vraag 19}
+Programmeren: 14u\\
+Verslag (en de opdrachten die niet op de computer waren te doen): 24u 
+
+\section*{Vraag 20}
+We hebben verondersteld dat de gebruikers eerlijk scores geven alsook dat deze gebruikers een representatieve groep zijn. Dit zijn natuurlijk twee gevaarlijke aannames. Als de gebruikers bijvoorbeeld valse beoordelingen gaan geven gaat dit de resultaten beïnvloeden. Ook indien de gebruikers enkel uit een bepaalde locatie komen of allemaal dezelfde taal spreken, kan dit er voor zorgen dat verkeerde resultaten worden getoond.
+\\
+\\
+Het nieuw aanbevelingssysteem zou een nauwkeuriger beeld kunnen geven dan het aanbevelingssysteem van Amazon zelf. Door een score te geven van 1 tot 5 geef je een nauwkeuriger beeld door te zeggen hoe goed je een boek vindt. Je geeft meer informatie dan louter zeggen of je het al dan niet gekocht hebt. Het nadeel hiervan is dat beoordelingen vals kunnen zijn waardoor voorspellingen gaan falen. Een ander nadeel is de verhoogde rekencomplexiteit. Door meerdere bits aan informatie te geven, gaat die mogelijks gaan stijgen.
+\\
+\\
+Indien men kan garanderen dat (1) elke gebruiker een eerlijke score geeft en (2) men heeft geen moeite om het beoordelingssyteem te verwerken dan zou ik zeker aanraden om het aanbevelingssysteem te veranderen.
+Spijtig genoeg zal het eerste (1) een probleem zijn dat moeilijk op te lossen is. Dus zolang dit niet het geval is zou ik niet veranderen van beoordelingssyteem.
+\section*{Vraag 21}
+Ik had graag gehad dat er de mogelijkheid was om het practicum in een andere taal (bv. Python) te doen. Matlab is niet opensource en dus niet gratis beschikbaar indien we later afstuderen.
+De programmeervragen waren op zich niet te moeilijk, de wiskunde erachter daarentegen is soms wat aan de vage kant. Ik had graag uitgebreidere achtergrond informatie hierover gehad.
+Aangezien dat die er nu niet was, was het vaak opzoeken op het internet waardoor er veel tijd verloren gaat.
+
 \end{document}

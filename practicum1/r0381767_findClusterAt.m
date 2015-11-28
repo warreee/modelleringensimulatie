@@ -1,4 +1,4 @@
-function [ b ] = findClusterAt( BlockMatrix, i )
+function [ b ] = r0381767_findClusterAt( BlockMatrix, i )
 %Returns the end row of a block in a diagonal Block matrix
 %   i is the begin row
 
