@@ -15,7 +15,7 @@
 \graphicspath{{figures/}}
 \usepackage{todonotes}
 \usepackage{url}
-
+\usepackage{subcaption}
 %----------------------------------------------------------------------------------------
 %	CONFIGURATION OF CODE LISTINGS
 %----------------------------------------------------------------------------------------
@@ -159,7 +159,7 @@ Indien we dit invullen in vergelijking (2) krijgen we:
 $$\lim_{k\rightarrow\infty} \frac{|(k+1)^m + 10^b|}{|k^m + 10^b|} = 1$$
 
 
-Aangezien $\mu=1$ wordt voor $k\rightarrow \infty$ kunnen we spreken over \textbf{sublineare convergentie orde}\footnote{\url{https://en.wikipedia.org/wiki/Rate_of_convergence}}. 
+\textit{m} is zoals eerder gezegd negatief, hierdoor gaat voor $k\rightarrow \infty$ de eerste factor in noemer en teller naar 0 gaan. Aangezien dan $\mu=1$ wordt voor $k\rightarrow \infty$ kunnen we spreken over \textbf{sublineare convergentie orde}\footnote{\url{https://en.wikipedia.org/wiki/Rate_of_convergence}}. 
 
 \lstinputlisting[language=Matlab, caption=Opdracht 4, firstline=6, lastline=13]{../opdrachten.m}
 
@@ -353,20 +353,47 @@ Dit gaat waarschijnlijk de oorzaak zijn dat er een cluster is gevormd.
 \includegraphics[scale=0.55]{opdracht16}
 \caption{Opdracht 16}
 \end{figure}
-De bijzondere structuur van figuur 9 is o.a. te verklaren doordat de correlatiematrix een symmetrisch matrix is. Indien boek a niet hoort bij boek b dan geldt dit andersom ook niet. Er zijn twee clusters waarbij de boeken sterk positief met elkaar verbonden zijn en twee clusters waarbij dat de boeken sterk negatief met elkaar verbonden zijn. Deze twee clusters die negatief verbonden zijn, zijn eigenlijk dezelfde clusters, door de symmetrie van de matrix. 
-
+De correlatiematrix C26 heeft op zich \textit{geen} bijzondere structuur. Het is doordat we een permutatie vector \textit{p} op de kolommen en rijen toepassen dat er een bijzondere structuur wordt gecreëerd. De twee grote negatieve vierkanten zijn als volgt teverklaren: indien boek a niet hoort bij boek b dan geldt dit andersom ook, het is een symmetrische relatie. Er zijn twee clusters waarbij de boeken sterk positief met elkaar verbonden zijn en twee clusters waarbij dat de boeken sterk negatief met elkaar verbonden zijn.
+De volledige structuur is te danken aan het feit dat er in de boeken die we onderzocht hebben zich 2 grote groepen bevinden. We hebben enerzijds de romantische boeken en liefdesverhalen; aan de andere kant hebben we fantasy en actie:
 \begin{figure}[H]
+\begin{subfigure}{0.33\textwidth}
 \centering
-\includegraphics[scale=0.30]{fueled44}
-\caption{Boek 83: dune}
+\includegraphics[width=.8\linewidth]{fueled44}
+\caption{Dune}
+\end{subfigure}
+\begin{subfigure}{0.33\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{game}
+\caption{Game of Thrones}
+\end{subfigure}
+\begin{subfigure}{0.33\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{hp4}
+\caption{Harry Potter}
+\end{subfigure}
+\caption{De groep van actie en fantasy}
 \end{figure}
 
 \begin{figure}[H]
+\begin{subfigure}{0.33\textwidth}
 \centering
-\includegraphics[scale=0.30]{dune83}
+\includegraphics[width=.8\linewidth]{dune83}
+\caption{Fueled}
+\end{subfigure}
+\begin{subfigure}{0.33\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{fifty}
+\caption{Fifty shades of Grey}
+\end{subfigure}
+\begin{subfigure}{0.33\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{baredtoyou}
+\caption{Bared to you}
+\end{subfigure}
+\caption{De groep van romantiek en liefde}
+
 \caption{Boek 44: Fueled}
 \end{figure}
-De score tussen boek 44 en 83 of omgekeerd is -0.423. Dat deze twee boeken niet bij elkaar horen is gemakkelijk te verklaren door hun genres. Dune is science-fiction en fueled romantiek, twee genres die toch wel ver uiteen kunnen liggen.
 
 \lstinputlisting[language=Matlab, caption=Opdracht 15, firstline=71, lastline=79]{../opdrachten.m}
 
@@ -399,7 +426,7 @@ rang(A+B) \leq rang(A) + rang(B)
 \end{equation} 
 Dan bekomen we uiteindelijk:
 $$  rang(C) = rang\left(A+(-1\mu^T)\right) = rang(A) + rang(-1\mu^T) \leq r + 1$$
-De vorige eigenschap in (4) kunnen we nu ook gebruiken om de rang van $1\mu^T$ te berekenen. Aangezien $1$ en $\mu$ 1-dimensionaal zijn is hun rang ook maximaal 1. De rang van was al gekend namelijk \textit{r}. Hiermee is het gevraagde aangetoond.
+De vorige eigenschap in (4) kunnen we nu ook gebruiken om de rang van $1\mu^T$ te berekenen. Aangezien $1$ en $\mu$ 1-dimensionaal zijn is hun rang ook maximaal 1. De rang van A was al gekend namelijk \textit{r}. Hiermee is het gevraagde aangetoond.
 
 \section*{Opdracht 18}
 
@@ -421,7 +448,7 @@ In de matrix K kan dus enkel een nul verschijnen indien de elementen in een rij 
 \underline{Er bestaat een pad van hoogstens lengte 2 $\Rightarrow$ $K = H^2 = H\cdot H$ verschilt van nul:}
 \\
 \\
-Als er een pad bestaat van lengte 2 dan moeten er 2 paden bestaan van lengte 1. Dit toont het bestaan aan incidentiematrix H. Om een pad van lengte twee te bekomen vermenigvuldigt men H met zichzelf. Daar er een pad is moet dit getal verschillen van nul.
+Als er een pad bestaat van lengte 2 dan moeten er 2 paden bestaan van lengte 1. Die paden van lengte 1 tonen het bestaan aan van incidentiematrix H. Om een pad van lengte twee te bekomen vermenigvuldigt men H met zichzelf. Als we opnieuw de definitie van het matrixproduct zoals hierboven er bijnemen en er is een pad (van lengte 2) dan moet dit getal verschillen van nul.
 
 \section*{Vraag 19}
 Programmeren: 14u\\
