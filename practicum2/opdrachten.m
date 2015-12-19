@@ -60,3 +60,19 @@ plot(cumsum(interest), 'x-');
 hold all
 plot(cumsum(principal), 'o-');
 legend('Interest', 'Hoofdsom', 'Location', 'NorthWest');
+
+%% Opdracht 17
+Polie = zeros(6,60);
+Polie(1,:) = 50;
+Polie(2,:) = 60;
+Polie(3,:) = 70;
+Polie(4,:) = 80;
+Polie(5,:) = 90;
+Polie(6,:) = 100;
+
+figure
+for i = 1 : 6
+    cashflow = r0381767_cashFlow(60, 21.8, Debt, 20, 11.843, Polie(i,:));
+    plot(cashflow)
+    hold on
+end

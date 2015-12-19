@@ -8,11 +8,11 @@ interest = 0;
 principal = 0;
 
 for i = 1 : n
-    if mod(Debt(i,1),12) == mod(month,12) && month < Debt(i,1)
+    if mod(Debt(i,1),12) == mod(month,12) && month <= Debt(i,1)
         interest = interest + (Debt(i,4)/100)*Debt(i,3);
     end
     if Debt(i,1) == month
-        principal = principal + Debt(i,3);
+        principal = principal + Debt(i,3)
     end
 end
 
