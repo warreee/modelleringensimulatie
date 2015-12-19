@@ -76,3 +76,4 @@ for i = 1 : 6
     plot(cashflow)
     hold on
 end
+
