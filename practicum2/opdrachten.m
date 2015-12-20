@@ -52,7 +52,7 @@ r0381767_downstreamEarnings(34.73)
 
 load('Debt.mat')
 
-sum(Debt(:,3));
+sum(Debt(:,3) .* ceil(Debt(:,1)/12) .* (Debt(:,4)/100) + Debt(:,3))
 
 %% Opdracht 14
 
