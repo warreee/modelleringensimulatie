@@ -77,3 +77,39 @@ for i = 1 : 6
     hold on
 end
 
+%% Opdracht 20
+Polie = zeros(6,60);
+Polie(1,:) = 50;
+Polie(2,:) = 60;
+Polie(3,:) = 70;
+Polie(4,:) = 80;
+Polie(5,:) = 90;
+Polie(6,:) = 100;
+
+figure
+for i = 1 : 6
+    cashflow = r0381767_cashFlowWithRefinancing(60, 21.8, Debt, 20, 11.843, Polie(i,:));
+    plot(cashflow)
+    hold on
+end
+
+%% Opdracht 22
+
+figure
+for i = 1 : 10
+    oilPrices = r0381767_averageOilPrices(24, 52.69);
+    cashflow = r0381767_cashFlowWithRefinancing(24, 21.8, Debt, 20, 11.843, oilPrices);
+    plot(cashflow)
+    hold on
+end
+
+%% Opdracht 23
+bankruptcy = 0;
+for i = 1 : 100000
+    oilPrices = r0381767_averageOilPrices(24, 52.69);
+    cashflow = r0381767_cashFlowWithRefinancing(24, 21.8, Debt, 20, 11.843, oilPrices);
+    if any(cashflow<0)
+       bankruptcy = bankruptcy+1; 
+    end
+end
+bankruptcy/100000
