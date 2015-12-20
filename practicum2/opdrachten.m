@@ -87,8 +87,15 @@ figure
 for i = 1 : 6
     cashflow = r0381767_cashFlow(60, 21.8, Debt, 20, 11.843, Polie(i,:));
     plot(cashflow)
+    bankruptMonth = find(cashflow<0,1)  % Opdracht 18
+    floor((bankruptMonth-1)/12)         % Opdracht 18
+    mod(bankruptMonth-1,12)+1           % Opdracht 18
     hold on
 end
+plot(zeros(1,60))
+legend('50', '60', '70', '80', '90', '100', 'Location', 'SouthWest');
+xlabel('Maanden')
+ylabel('Miljard $')
 
 %% Opdracht 20
 Polie = zeros(6,60);
@@ -103,18 +110,28 @@ figure
 for i = 1 : 6
     cashflow = r0381767_cashFlowWithRefinancing(60, 21.8, Debt, 20, 11.843, Polie(i,:));
     plot(cashflow)
+    bankruptMonth = find(cashflow<0,1)  % Opdracht 21
+    floor((bankruptMonth-1)/12)         % Opdracht 21
+    mod(bankruptMonth-1,12)+1           % Opdracht 21
     hold on
 end
+plot(zeros(1,60))
+legend('50', '60', '70', '80', '90', '100', 'Location', 'SouthWest');
+xlabel('Maanden')
+ylabel('Miljard $')
 
 %% Opdracht 22
 
 figure
 for i = 1 : 10
     oilPrices = r0381767_averageOilPrices(24, 52.69);
-    cashflow = r0381767_cashFlowWithRefinancing(24, 21.8, Debt, 20, 11.843, oilPrices);
+    cashflow = r0381767_cashFlowWithRefinancing(24, 21.8, Debt, 20, 11.843, oilPrices)
     plot(cashflow)
     hold on
 end
+plot(zeros(1,24))
+xlabel('Maanden')
+ylabel('Miljard $')
 
 %% Opdracht 23
 bankruptcy = 0;
@@ -126,3 +143,14 @@ for i = 1 : 100000
     end
 end
 bankruptcy/100000
+
+
+%% test
+
+interest = zeros(1000,1);
+for m = 1 : 1000
+    interest(m) = r0381767_interestExpenseWithRefinancing(Debt, m);
+end
+[int, month] = max(interest)
+sum(interest)
+sum(principal)

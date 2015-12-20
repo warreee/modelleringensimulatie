@@ -6,7 +6,7 @@ n = size(Debt,1);
 interest = 0;
 
 for i = 1 : n
-    if mod(Debt(i,1),12) == mod(month,12)
+    if mod(Debt(i,1)-1,12)+1 == mod(month-1,12)+1
         interest = interest + (Debt(i,4)/100)*Debt(i,3);
     end
 end
