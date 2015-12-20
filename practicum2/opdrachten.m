@@ -61,13 +61,18 @@ principal = zeros(360,1);
 for m = 1 : 360
     [interest(m),principal(m)] = r0381767_interestExpense(Debt, m);
 end
-
+[int, month] = max(interest)
+sum(interest)
+sum(principal)
+    
 %% Opdracht 15
 
 plot(cumsum(interest), 'x-');
 hold all
 plot(cumsum(principal), 'o-');
 legend('Interest', 'Hoofdsom', 'Location', 'NorthWest');
+xlabel('Maanden')
+ylabel('Miljard $')
 
 %% Opdracht 17
 Polie = zeros(6,60);
