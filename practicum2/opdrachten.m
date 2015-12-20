@@ -46,6 +46,8 @@ r0381767_upstreamEarnings(34.73)
 
 %% Opdracht 9
 
+r0381767_downstreamEarnings(34.73)
+
 %% Opdracht 12
 
 load('Debt.mat')
