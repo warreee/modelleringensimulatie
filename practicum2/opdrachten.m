@@ -9,7 +9,7 @@ ylabel('Prijs ($) per boe')
 
 %% Opdracht 3
 
-test = r0381767_averageOilPrices(12,50)
+test = r0381767_averageOilPrices(60,50)
 
 plot(test)
 hold on
@@ -24,9 +24,13 @@ avgMonthlyOilPrices = mean(monthlyOilPrices,2);
 
 target = 52.69*(80/52.69).^(30*(1:60)/1800);
 
+figure
 plot(avgMonthlyOilPrices)
 hold on
 plot(target)
+xlabel('Maanden')
+ylabel('Olieprijs ($)')
+legend('avgMonthlyOilPrices', 'target', 'Location', 'NorthWest');
 
 %% Opdracht 5
 K = 38.4629;

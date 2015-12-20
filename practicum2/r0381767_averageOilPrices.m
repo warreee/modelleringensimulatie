@@ -1,4 +1,4 @@
-function [ avgMonthlyOilPrice ] = r0381767_averageOilPrices(months, initialPrice )
+function [ avgMonthlyOilPrice ] = r0381767_averageOilPrices(months, initialPrice)
 %Calculates the averge monthly oilprize
 %   Uses r0381767_simulatePrice()
 
@@ -10,8 +10,6 @@ daily = r0381767_simulatePrice(initialPrice, 30*months-1, mu, sigma);
 monthly = reshape(daily, [30,months]);
 
 avgMonthlyOilPrice = mean(monthly,1);
-
-
 
 end
 
