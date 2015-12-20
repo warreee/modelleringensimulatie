@@ -42,7 +42,7 @@ Polie = (K*(Volie + Vgas) - Pgas*Vgas)/Volie
 
 %% Opdracht 7
 
-r0381767_upstreamEarnings(45)
+r0381767_upstreamEarnings(34.73)
 
 %% Opdracht 9
 
