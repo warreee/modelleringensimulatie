@@ -1,4 +1,4 @@
-function [ path ] = r0381767_simulatePrice( initialPrice, days, mu, sigma )
+function [path] = r0381767_simulatePrice(initialPrice, days, mu, sigma)
 % Simulates the price for 'days' days.
 
 path = zeros(1,days+1);

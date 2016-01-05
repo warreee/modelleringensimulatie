@@ -115,7 +115,13 @@ Dr. Ir. Nick \textsc{Vannieuwenhoven} \\ % Supervisor's Name
 \vfill % Fill the rest of the page with whitespace
 
 \end{titlepage}
-
+\section*{Inleiding}
+De antwoorden op de opdrachten zijn als volgt gestructureerd:
+\begin{enumerate}
+\item Het antwoord indien er een vraag werd gesteld.
+\item Eventuele figuren die gevraagd zijn.
+\item De code die zorgde voor de oplossing te verkrijgen.
+\end{enumerate}
 \section*{Opdracht 1}
 
 \lstinputlisting[language=Matlab, caption=Opdracht 1]{../r0381767_simulatePrice.m}
@@ -126,7 +132,7 @@ De prijs gebruikt voor de opdracht is die van vrijdag 18 december 2015: \$$34.73
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.75]{opdracht2}
-\caption{10 simulaties voor 360 dagen}
+\caption{10 simulaties van 360 dagen}
 \end{figure}
 
 \noindent
@@ -143,7 +149,7 @@ Het verloop van de olieprijzen getoond in bovenstaande figuur zien er realistisc
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.75]{opdracht4}
-\caption{10 simulaties voor 360 dagen}
+\caption{Gemiddelde maandelijkse olieprijs voor 100000 simulaties}
 \end{figure}
 
 \lstinputlisting[language=Matlab, caption=Opdracht 4, firstline=17, lastline=34]{../opdrachten.m}
@@ -180,7 +186,7 @@ Shell realiseert dan een operationele nettowinst van het downstreamsegment van \
 \lstinputlisting[language=Matlab, caption=Opdracht 11]{../r0381767_capexExpense.m}
 
 \section*{Opdracht 12}
-De totale uitstaande schuld van Shell op 1 januarie 2015 bedraagt: \$$44.8898$ miljard.
+De totale uitstaande schuld (hoofdsommen en verschuldigde interest) van Shell op 1 januarie 2015 bedraagt: \$$44.8898$ miljard.
 \lstinputlisting[language=Matlab, caption=Opdracht 12, firstline=51, lastline=56]{../opdrachten.m}
 
 \section*{Opdracht 13}
@@ -231,6 +237,10 @@ De code om de data te vinden zit mee in opdracht 17, zie dus listing 17.
 \section*{Opdracht 19}
 
 \lstinputlisting[language=Matlab, caption=Opdracht 19]{../r0381767_cashFlowWithRefinancing.m}
+\noindent
+Voor de herfinanciering heb ik een alternatieve functie \texttt{r0381767\_interestExpenseWithRefinancing()} gemaakt. In essentie is dit dezelfde functie als in opdracht 13. Enkel wordt er nu nooit het hoofdbedrag teruggeven. Dit kan omdat we de veronderstelling maakten dat de herfinanciering blijft doorlopen en we dus nooit het hoofdbedrag hoeven uit te betalen.
+
+\lstinputlisting[language=Matlab, caption=Opdracht 19]{../r0381767_interestExpenseWithRefinancing.m}
 
 \section*{Opdracht 20}
 
@@ -254,10 +264,10 @@ Prijs & Maand & Jaar\\
 \$70 & juni & 2017\\
 \$80 & maart & 2018\\
 \$90 & december & 2019\\
-\$100 & ? & ?\\
+\$100 & september & 2024\\
 \end{tabular}
 \end{table}
-
+De code om de data te vinden zit mee in opdracht 20, zie dus listing 20.
 \section*{Opdracht 22}
 
 \begin{figure}[H]
@@ -278,16 +288,18 @@ De kans bedraagt 69.55\%.
 \section*{Opdracht 24}
 
 Oplossen opdrachten: 12u.\\
-Verslag maken: 8u.
+Verslag maken: 10u.
 
 \section*{Opdracht 25}
 
 Ik denk niet dat de simulaties die wij hebben gemaakt echt een nut hebben. Ze zijn te simplistisch om veel waarde aan te hechten. 
-Het lijkt me niet realistisch dat een oliebedrijf als Shell failliet zou gaan, ondanks de dalende olieprijs. 
+Het lijkt me niet realistisch dat een oliebedrijf als Shell failliet zou gaan, ondanks de dalende olieprijs. Olie is en blijft een gegeerd product.
+De simulatie kan wel een goede indicatie geven dat Shell zich meer moet concentreren op alternatieve producten uit het downstreamsegment. 
+Dit komt omdat oliebedrijven in het Midden-Oosten het veel gemakkelijker hebben om olie op te pompen, met het upstream segment valt dus moeilijker te concurreren bij een lage olieprijs.
 
 \section*{Opdracht 26}
-Dit practicum was gemakkelijker als het vorige. Soms heb ik wel het gevoel dat er enkel geïmplementeerd moet worden, ik zou graag wat meer achtergrond krijgen hoe men bijvoorbeeld tot het model (vergelijking 1 in de opgave) komt.
+Dit practicum was gemakkelijker als het vorige, maar daar om niet te gemakkelijk. Soms heb ik wel het gevoel dat er enkel geïmplementeerd moet worden, ik zou graag wat meer achtergrond krijgen hoe men bijvoorbeeld tot het model (vergelijking 1 in de opgave) komt.
 De economische terminologie is voldoende duidelijk.
-Zelf ben ik tegen bedrijven zoals Shell en Total, ik zou liever vraagstukken zien voor bedrijven met een beter imago.
+Zelf ben ik tegen bedrijven zoals Shell en Total, ik zou liever vraagstukken zien voor bedrijven met een beter (groener) imago.
 
 \end{document}

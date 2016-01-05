@@ -98,24 +98,24 @@ xlabel('Maanden')
 ylabel('Miljard $')
 
 %% Opdracht 20
-Polie = zeros(6,60);
+n = 60; % Voor 100$ n = 120
+Polie = zeros(6,n);
 Polie(1,:) = 50;
 Polie(2,:) = 60;
 Polie(3,:) = 70;
 Polie(4,:) = 80;
 Polie(5,:) = 90;
 Polie(6,:) = 100;
-
 figure
 for i = 1 : 6
-    cashflow = r0381767_cashFlowWithRefinancing(60, 21.8, Debt, 20, 11.843, Polie(i,:));
+    cashflow = r0381767_cashFlowWithRefinancing(n, 21.8, Debt, 20, 11.843, Polie(i,:));
     plot(cashflow)
     bankruptMonth = find(cashflow<0,1)  % Opdracht 21
     floor((bankruptMonth-1)/12)         % Opdracht 21
     mod(bankruptMonth-1,12)+1           % Opdracht 21
     hold on
 end
-plot(zeros(1,60))
+plot(zeros(1,n))
 legend('50', '60', '70', '80', '90', '100', 'Location', 'SouthWest');
 xlabel('Maanden')
 ylabel('Miljard $')
@@ -144,13 +144,3 @@ for i = 1 : 100000
 end
 bankruptcy/100000
 
-
-%% test
-
-interest = zeros(1000,1);
-for m = 1 : 1000
-    interest(m) = r0381767_interestExpenseWithRefinancing(Debt, m);
-end
-[int, month] = max(interest)
-sum(interest)
-sum(principal)
