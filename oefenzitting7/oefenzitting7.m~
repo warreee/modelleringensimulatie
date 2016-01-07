@@ -1,0 +1,6 @@
+%% Opgave 1
+load('dailyArea.mat');
+
+%% Opgave 2
+plot(dailyArea(:,4))
+hold on
